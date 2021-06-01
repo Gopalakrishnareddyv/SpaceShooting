@@ -36,7 +36,6 @@ public class BulletMovement : MonoBehaviour
         }
         else
         {
-            
             StartCoroutine(nameof(Bulletadd));
         }
         
@@ -51,8 +50,9 @@ public class BulletMovement : MonoBehaviour
         if (rbbullet.gameObject.name == "Bullet")
         {
             BulletSpawn.Instance.addBullet(rbbullet.gameObject);
-            print(rbbullet.gameObject.name);
-            print("Adding cannon ball to player");
+            //print(rbbullet.gameObject.name);
+            print("Missed cannon ball to player");
         }
     }
+   
 }

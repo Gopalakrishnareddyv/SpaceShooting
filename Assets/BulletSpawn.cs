@@ -39,13 +39,15 @@ public class BulletSpawn : MonoBehaviour
             bulletaudio.clip = bulletsound;
             bulletaudio.Play();
         }*/
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow))//spawning
         {
             BulletSpawning();
+            bulletaudio.clip = bulletsound;
+            bulletaudio.Play();
         }
                
     }
-    public void CreatePool()
+    public void CreatePool()//creating object pool method for bullets
     {
         {
             bulletpool.Push(Instantiate(bullet));
@@ -54,13 +56,13 @@ public class BulletSpawn : MonoBehaviour
         }
         
     }
-    public void addBullet(GameObject bullettemp)
+    public void addBullet(GameObject bullettemp)//adding missed bullet
     {
         bulletpool.Push(bullettemp);
         bulletpool.Peek().SetActive(false);
             
     }
-    public void BulletSpawning()
+    public void BulletSpawning()//spawning the bullets when stack is empty
     {
         if (bulletpool.Count==0)
         {
