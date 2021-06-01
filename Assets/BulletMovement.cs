@@ -22,6 +22,7 @@ public class BulletMovement : MonoBehaviour
     void Update()
     {
         rbbullet.velocity = new Vector2(0, 1)*bulletspeed;
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -32,6 +33,26 @@ public class BulletMovement : MonoBehaviour
             Enemyblast.Play();
             Destroy(this.gameObject);
             scoremanager.Increment();
+        }
+        else
+        {
+            
+            StartCoroutine(nameof(Bulletadd));
+        }
+        
+            
+            
+        
+    }
+    IEnumerator Bulletadd()
+    {
+        yield return new WaitForSeconds(2);
+        print("Missed the ball");
+        if (rbbullet.gameObject.name == "Bullet")
+        {
+            BulletSpawn.Instance.addBullet(rbbullet.gameObject);
+            print(rbbullet.gameObject.name);
+            print("Adding cannon ball to player");
         }
     }
 }

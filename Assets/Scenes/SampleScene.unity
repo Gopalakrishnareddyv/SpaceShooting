@@ -262,6 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5625814798867137218, guid: 670dd9b8756ecef49a0d07e2c21946f6, type: 3}
   bulletsound: {fileID: 8300000, guid: 202e6ee46bd54504a95d8e06549e3782, type: 3}
+  currentbullet: {fileID: 5625814798867137218, guid: 670dd9b8756ecef49a0d07e2c21946f6, type: 3}
 --- !u!61 &62476594
 BoxCollider2D:
   m_ObjectHideFlags: 0
